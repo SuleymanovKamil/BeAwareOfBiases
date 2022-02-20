@@ -11,7 +11,7 @@ import SwiftUI
 struct BeAwareOfBiasesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Home()
         }
     }
 }
