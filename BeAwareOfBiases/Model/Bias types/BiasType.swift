@@ -7,18 +7,25 @@
 
 import SwiftUI
 
-struct BiasType {
-    let title: LocalizedStringKey
+struct BiasType: Hashable {
+    let title: String
     let color: Color
+    
+    static var biasTypes: [BiasType] = [
+        BiasType(title: BiasGroup.memory.rawValue, color: Color("member")),
+        BiasType(title: BiasGroup.social.rawValue, color: Color("social")),
+        BiasType(title: BiasGroup.social.rawValue, color: Color("study")),
+        BiasType(title: BiasGroup.faith.rawValue, color: Color("faith")),
+        BiasType(title: BiasGroup.money.rawValue, color: Color("money")),
+        BiasType(title: BiasGroup.politic.rawValue, color: Color("politic"))
+    ]
 }
 
-extension BiasType {
-    static var biasTypes: [BiasType] = [
-        BiasType(title: LocalizedStringKey("Память"), color: Color("member")),
-        BiasType(title: LocalizedStringKey("Социум"), color: Color("social")),
-        BiasType(title: LocalizedStringKey("Обучение"), color: Color("study")),
-        BiasType(title: LocalizedStringKey("Вера"), color: Color("faith")),
-        BiasType(title: LocalizedStringKey("Деньги"), color: Color("money")),
-        BiasType(title: LocalizedStringKey("Политика"), color: Color("politic")),
-    ]
+enum BiasGroup: String, CaseIterable {
+    case memory = "Память"
+    case social = "Социум"
+    case study = "Обучение"
+    case faith = "Вера"
+    case money = "Деньги"
+    case politic = "Политика"
 }

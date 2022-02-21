@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Rubricator: View {
-    @State var currentType: BiasType?
+    @EnvironmentObject private var viewModel: HomeViewModel
     var body: some View {
         VStack {
             Text("50 когнитивных искажений")
@@ -26,9 +26,9 @@ struct Rubricator: View {
                         .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: -3)
                         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: -3)
                         .offset(y: index > 2 ? -8 : 0)
-                        .rotation3DEffect(.degrees(currentType?.title == BiasType.biasTypes[index].title ? 10 : 0), axis: (x: 1, y: 0, z: 0) )
+                        .rotation3DEffect(.degrees(viewModel.currentType?.title == BiasType.biasTypes[index].title ? 10 : 0), axis: (x: 1, y: 0, z: 0) )
                         .onTapGesture {
-                            currentType = BiasType.biasTypes[index]
+                            viewModel.currentType = BiasType.biasTypes[index]
                         }
                 }
             }
@@ -46,5 +46,6 @@ struct Rubricator: View {
 struct Rubricator_Previews: PreviewProvider {
     static var previews: some View {
         Rubricator()
+            .environmentObject(HomeViewModel())
     }
 }

@@ -8,4 +8,5 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    @Published var currentType: BiasType?
 }

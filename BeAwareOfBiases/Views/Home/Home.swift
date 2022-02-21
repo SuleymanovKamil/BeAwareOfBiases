@@ -8,34 +8,26 @@
 import SwiftUI
 
 struct Home: View {
+    @StateObject private var viewModel = HomeViewModel()
     var body: some View {
         NavigationView {
             VStack {
                 Rubricator()
-                
-               Spacer(minLength: 100)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                        ForEach(0..<Biase.biases.count, id: \.self) { index in
-                            VStack (spacing: 50) {
-                                Text(Biase.biases[index].name)
-                                    .padding(.top, 50)
-                                
-                                Image(Biase.biases[index].image)
-                                
-                                Text(Biase.biases[index].description)
-                                    .fixedSize(horizontal: false, vertical: true)
-                                
-                               Spacer()
-                            }
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color.white.cornerRadius(20).shadow(radius: 10))
+
+                ScrollView(showsIndicators: false) {
+                    LazyVGrid(columns: [GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 2 - 10), spacing: 0), GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 2 - 10), spacing: 10),], alignment: .center, spacing: 10) {
+                        ForEach(viewModel.currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == viewModel.currentType?.title}), id: \.self) { biase in
+                            BiaseCardMini(biase: biase)
+                                .frame(height: 100)
                         }
-                    .padding()
+                        .padding(.top, 70)
+                    }
                 }
                 Spacer()
+//                tableViewCards
             }
             .navigationBarHidden(true)
+            .environmentObject(viewModel)
         }
     }
 }
@@ -45,3 +37,17 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+
+extension Home {
+    private var tableViewCards: some View {
+        TabView {
+            ForEach(viewModel.currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == viewModel.currentType?.title}), id: \.self) { biase in
+                BiaseCard(biase: biase)
+            }
+            .padding()
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+    }
+
+}
+

@@ -16,6 +16,8 @@
 		6B1F673827C29A7B00C1D463 /* BiasType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F673727C29A7B00C1D463 /* BiasType.swift */; };
 		6B1F673E27C2B1FD00C1D463 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F673D27C2B1FD00C1D463 /* CustomCorner.swift */; };
 		6B1F674027C2B48300C1D463 /* Rubricator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1F673F27C2B48300C1D463 /* Rubricator.swift */; };
+		6B6D708127C37B3D002FEBF6 /* BiaseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D708027C37B3D002FEBF6 /* BiaseCard.swift */; };
+		6B6D708327C3C350002FEBF6 /* BiaseCardMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D708227C3C350002FEBF6 /* BiaseCardMini.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		6B1F673727C29A7B00C1D463 /* BiasType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiasType.swift; sourceTree = "<group>"; };
 		6B1F673D27C2B1FD00C1D463 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		6B1F673F27C2B48300C1D463 /* Rubricator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rubricator.swift; sourceTree = "<group>"; };
+		6B6D708027C37B3D002FEBF6 /* BiaseCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiaseCard.swift; sourceTree = "<group>"; };
+		6B6D708227C3C350002FEBF6 /* BiaseCardMini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiaseCardMini.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +65,10 @@
 		6B1F671C27C2986100C1D463 /* BeAwareOfBiases */ = {
 			isa = PBXGroup;
 			children = (
-				6B1F673B27C2B1D200C1D463 /* Helpers */,
 				6B1F672D27C2989B00C1D463 /* ViewModel */,
 				6B1F672C27C2989200C1D463 /* Model */,
 				6B1F672B27C2988600C1D463 /* Views */,
+				6B1F673B27C2B1D200C1D463 /* Helpers */,
 				6B1F672E27C298A800C1D463 /* System */,
 				6B1F672327C2986300C1D463 /* Preview Content */,
 			);
@@ -134,6 +138,8 @@
 			children = (
 				6B1F672F27C298DB00C1D463 /* Home.swift */,
 				6B1F673F27C2B48300C1D463 /* Rubricator.swift */,
+				6B6D708027C37B3D002FEBF6 /* BiaseCard.swift */,
+				6B6D708227C3C350002FEBF6 /* BiaseCardMini.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -232,11 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6D708127C37B3D002FEBF6 /* BiaseCard.swift in Sources */,
 				6B1F674027C2B48300C1D463 /* Rubricator.swift in Sources */,
 				6B1F673027C298DB00C1D463 /* Home.swift in Sources */,
 				6B1F673827C29A7B00C1D463 /* BiasType.swift in Sources */,
 				6B1F673227C298F500C1D463 /* Biase.swift in Sources */,
 				6B1F673E27C2B1FD00C1D463 /* CustomCorner.swift in Sources */,
+				6B6D708327C3C350002FEBF6 /* BiaseCardMini.swift in Sources */,
 				6B1F671E27C2986100C1D463 /* BeAwareOfBiasesApp.swift in Sources */,
 				6B1F673427C2998400C1D463 /* HomeViewModel.swift in Sources */,
 			);
