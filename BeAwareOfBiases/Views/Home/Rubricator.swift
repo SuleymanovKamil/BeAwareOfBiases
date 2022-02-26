@@ -40,7 +40,7 @@ struct Rubricator: View {
         .background(Color(hue: 1.0, saturation: 0.203, brightness: 0.683).ignoresSafeArea()
                         .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 3)
                         .shadow(color: Color.black.opacity(0.05), radius: 2, x: 0, y: 3))
-        .padding(.bottom, 15)
+        .padding(.bottom, 18)
     }
 }
 

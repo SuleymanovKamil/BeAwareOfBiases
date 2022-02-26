@@ -10,7 +10,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var currentType: BiasType?
     var biases: [Biase] {
-        currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == currentType?.title})
+        currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.map({$0.rawValue}).contains(currentType?.title)})
     }
     
     func shareAction(text: String) {

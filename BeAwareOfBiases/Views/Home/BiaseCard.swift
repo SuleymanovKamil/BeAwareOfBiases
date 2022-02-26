@@ -22,13 +22,12 @@ struct BiaseCard: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 10)
             }
+            .padding(.top, 10)
             
             Image(biase.image)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 100)
-            
-           
             
             Text(biase.description)
                 .italic()
