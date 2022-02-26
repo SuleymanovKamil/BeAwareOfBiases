@@ -20,7 +20,7 @@ struct Rubricator: View {
                 ForEach(0..<BiasType.biasTypes.count, id: \.self) { index in
                     Text(BiasType.biasTypes[index].title)
                         .offset(y: index < 2 ? -4 : 0)
-                        .foregroundColor(viewModel.currentType?.title == BiasType.biasTypes[index].title ? .secondary  : .white  )
+                        .foregroundColor(.white)
                         .frame(width: UIScreen.main.bounds.width / 3, height: 50)
                         .background(BiasType.biasTypes[index].color.clipShape(CustomCorner(radius: 10, corners: [.topLeft, .topRight])))
                         .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: -3)

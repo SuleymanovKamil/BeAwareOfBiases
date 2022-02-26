@@ -12,6 +12,7 @@ struct BeAwareOfBiasesApp: App {
     var body: some Scene {
         WindowGroup {
             Home()
+                .preferredColorScheme(.light)
         }
     }
 }

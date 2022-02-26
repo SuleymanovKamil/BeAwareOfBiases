@@ -39,7 +39,7 @@ extension Home {
                     }
                     .padding(20)
                 }
-                .tabViewStyle(.page(indexDisplayMode: .always))
+                .tabViewStyle(.page(indexDisplayMode: viewModel.currentType == nil ? .never : .always))
             }
             Spacer()
         }

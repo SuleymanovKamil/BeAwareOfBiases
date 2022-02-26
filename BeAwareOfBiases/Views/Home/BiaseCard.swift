@@ -11,31 +11,34 @@ struct BiaseCard: View {
     let biase: Biase
     @EnvironmentObject private var viewModel: HomeViewModel
     var body: some View {
-        VStack(spacing: 50) {
+        VStack {
             VStack {
                 Text(biase.title)
                     .font(.headline)
+                    .foregroundColor(.primary)
                     .padding(.top, 30)
-                .fixedSize(horizontal: false, vertical: true)
+                    .fixedSize(horizontal: false, vertical: true)
                 
                 Text(biase.subtitle)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 10)
             }
             .padding(.top, 10)
-            
-            Image(biase.image)
+            Spacer()
+            Image(systemName: biase.image)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 100)
-            
+                .frame(width: 100, height: 100)
+            Spacer()
             Text(biase.description)
                 .italic()
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.bottom, 40)
-        
+            
+          
+            
             HStack {
-                Link(destination: URL(string: biase.url ?? "https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9")!){
+                Link(destination: URL(string: biase.url ?? wikipedia)!){
                     Label("Подробнее", systemImage: "book")
                 }
                 
@@ -50,11 +53,12 @@ struct BiaseCard: View {
                     }
                 })
             }
+            .foregroundColor(.primary)
             .padding(.horizontal)
+            .padding(.bottom, 30)
             
-            Spacer()
         }
-        .foregroundColor(.black)
+        .foregroundColor(.secondary)
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width)
         .background(Color(hue: 1.0, saturation: 0.047, brightness: 0.878))
@@ -64,6 +68,8 @@ struct BiaseCard: View {
                 .shadow(radius: 10)
         )
     }
+   
+    private let wikipedia = "https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9"
 }
 
 struct BiaseCard_Previews: PreviewProvider {
