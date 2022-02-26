@@ -13,19 +13,10 @@ struct Home: View {
         NavigationView {
             VStack {
                 Rubricator()
-
-                ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: [GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 2 - 10), spacing: 0), GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 2 - 10), spacing: 10),], alignment: .center, spacing: 10) {
-                        ForEach(viewModel.currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == viewModel.currentType?.title}), id: \.self) { biase in
-                            BiaseCardMini(biase: biase)
-                                .frame(height: 100)
-                        }
-                        .padding(.top, 70)
-                    }
-                }
-                Spacer()
-//                tableViewCards
+                Cards
             }
+            .background(Color(hue: 1.0, saturation: 0.203, brightness: 0.683).ignoresSafeArea())
+            .edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
@@ -39,15 +30,19 @@ struct Home_Previews: PreviewProvider {
 }
 
 extension Home {
-    private var tableViewCards: some View {
-        TabView {
-            ForEach(viewModel.currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == viewModel.currentType?.title}), id: \.self) { biase in
-                BiaseCard(biase: biase)
+    private var Cards: some View {
+        Group {
+            if !viewModel.biases.isEmpty {
+                TabView {
+                    ForEach(viewModel.biases) { biase in
+                        BiaseCard(biase: biase)
+                    }
+                    .padding(20)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .always))
             }
-            .padding()
+            Spacer()
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
     }
-
 }
 

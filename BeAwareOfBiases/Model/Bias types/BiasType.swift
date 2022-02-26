@@ -14,7 +14,7 @@ struct BiasType: Hashable {
     static var biasTypes: [BiasType] = [
         BiasType(title: BiasGroup.memory.rawValue, color: Color("member")),
         BiasType(title: BiasGroup.social.rawValue, color: Color("social")),
-        BiasType(title: BiasGroup.social.rawValue, color: Color("study")),
+        BiasType(title: BiasGroup.study.rawValue, color: Color("study")),
         BiasType(title: BiasGroup.faith.rawValue, color: Color("faith")),
         BiasType(title: BiasGroup.money.rawValue, color: Color("money")),
         BiasType(title: BiasGroup.politic.rawValue, color: Color("politic"))

@@ -26,7 +26,11 @@ struct BiaseCardMini: View {
         }
         .foregroundColor(.secondary)
         .padding(.horizontal)
-        .background(Color.white.cornerRadius(20).shadow(radius: 10))
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.secondary, lineWidth: 1)
+                .shadow(radius: 10)
+        )
     }
 }
 
