@@ -13,11 +13,8 @@ class HomeViewModel: ObservableObject {
         currentType == nil ? Biase.biases : Biase.biases.filter({$0.type.rawValue == currentType?.title})
     }
     
-     func shareAction() {
-        guard let urlShare = URL(string: "https://developer.apple.com/xcode/swiftui/") else {
-            return
-        }
-        let activityVC = UIActivityViewController(activityItems: [urlShare], applicationActivities: nil)
+    func shareAction(text: String) {
+        let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
     }
 }
