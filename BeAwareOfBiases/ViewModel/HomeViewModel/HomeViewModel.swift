@@ -13,7 +13,12 @@ class HomeViewModel: ObservableObject {
         currentType == nil ? Biase.biases.shuffled() : Biase.biases.filter({$0.type.map({$0.rawValue}).contains(currentType?.title)})
     }
     
-    func shareAction(text: String) {
+    func share(with biase: Biase) {
+        
+        let text = "Когнитивное искажение: " + biase.title.lowercased() + "."
+        + "\n" + biase.subtitle
+        + "\n" + "Пример: " +  biase.description
+        
         let activityVC = UIActivityViewController(activityItems: [text], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
     }

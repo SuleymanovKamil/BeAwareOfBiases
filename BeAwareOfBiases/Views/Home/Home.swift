@@ -13,6 +13,7 @@ struct Home: View {
         NavigationView {
             VStack {
                 Rubricator()
+                
                 Cards
             }
             .background(Color(hue: 1.0, saturation: 0.203, brightness: 0.683).ignoresSafeArea())
@@ -45,4 +46,5 @@ extension Home {
         }
     }
 }
+
 

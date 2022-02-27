@@ -53,7 +53,7 @@ struct BiaseCard: View {
                 Spacer()
                 
                 Button(action: {
-                    viewModel.shareAction(text: "Когнитивное искажение: " + biase.title + ". " + biase.subtitle + ". Пример: " +  biase.description)
+                    viewModel.share(with: biase)
                 }, label: {
                     HStack {
                         Image(systemName: "square.and.arrow.up")
