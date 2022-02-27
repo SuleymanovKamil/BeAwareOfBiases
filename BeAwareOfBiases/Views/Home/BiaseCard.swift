@@ -15,27 +15,33 @@ struct BiaseCard: View {
             VStack {
                 Text(biase.title)
                     .font(.headline)
+                    .italic()
                     .foregroundColor(.primary)
                     .padding(.top, 30)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Text(biase.subtitle)
+                    .italic()
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 10)
             }
             .padding(.top, 10)
+            
             Spacer()
+            
             Image(systemName: biase.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
             Spacer()
+            
             Text(biase.description)
                 .italic()
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.bottom, 40)
             
-          
+            Divider()
+                .padding(.bottom)
             
             HStack {
                 if biase.url != nil {
