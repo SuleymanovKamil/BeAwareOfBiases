@@ -38,8 +38,10 @@ struct BiaseCard: View {
           
             
             HStack {
-                Link(destination: URL(string: biase.url ?? wikipedia)!){
-                    Label("Подробнее", systemImage: "book")
+                if biase.url != nil {
+                    Link(destination: URL(string: biase.url ?? wikipedia)!){
+                        Label("Подробнее", systemImage: "book")
+                    }
                 }
                 
                 Spacer()
@@ -61,10 +63,11 @@ struct BiaseCard: View {
         .foregroundColor(.secondary)
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width)
-        .background(Color(hue: 1.0, saturation: 0.047, brightness: 0.878))
+        .background(Color(hue: 1.0, saturation: 0.047, brightness: 0.878).clipShape(CustomCorner(radius: 20, corners: [.bottomLeft, .bottomRight])))
         .overlay(
             Rectangle()
                 .stroke(Color.secondary, lineWidth: 0.5)
+                .clipShape(CustomCorner(radius: 20, corners: [.bottomLeft, .bottomRight]))
                 .shadow(radius: 10)
         )
     }

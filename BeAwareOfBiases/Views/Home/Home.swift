@@ -37,7 +37,7 @@ extension Home {
                     ForEach(viewModel.biases) { biase in
                         BiaseCard(biase: biase)
                     }
-                    .padding(20)
+                    .padding(.bottom, 20)
                 }
                 .tabViewStyle(.page(indexDisplayMode: viewModel.currentType == nil ? .never : .always))
             }

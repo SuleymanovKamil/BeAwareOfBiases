@@ -11,11 +11,6 @@ struct Rubricator: View {
     @EnvironmentObject private var viewModel: HomeViewModel
     var body: some View {
         VStack {
-            Text("50 когнитивных искажений")
-                .font(.title2)
-                .bold()
-                .foregroundColor(.white)
-            
             LazyVGrid(columns: [GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 3), spacing: 0), GridItem(.flexible(minimum: 40, maximum:UIScreen.main.bounds.width / 3), spacing: 0), GridItem(.flexible(minimum: 40, maximum: UIScreen.main.bounds.width / 3), spacing: 0)], alignment: .center, spacing: 0) {
                 ForEach(0..<BiasType.biasTypes.count, id: \.self) { index in
                     Text(BiasType.biasTypes[index].title)
@@ -32,7 +27,7 @@ struct Rubricator: View {
                         }
                 }
             }
-            .offset(y: 8)
+            .padding(.top, 20)
             .background(Color(hue: 1.0, saturation: 0.203, brightness: 0.683))
         }
         .padding(.top, 50)
