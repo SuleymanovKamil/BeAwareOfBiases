@@ -10,22 +10,26 @@ import SwiftUI
 struct BiaseCard: View {
     let biase: Biase
     @EnvironmentObject private var viewModel: HomeViewModel
+    
     var body: some View {
         VStack {
             VStack {
                 Text(biase.title)
                     .font(.headline)
                     .italic()
-                    .foregroundColor(.primary)
-                    .padding(.top, 30)
+                    .padding(.top, 10)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Text(biase.subtitle)
                     .italic()
                     .fixedSize(horizontal: false, vertical: true)
-                    .padding(.top, 10)
+                    .padding(.top, 5)
             }
-            .padding(.top, 10)
+            .padding(.vertical, 10)
+            .padding(.bottom, 10)
+            
+            Divider()
+                .background(Color.white)
             
             Spacer()
             
@@ -43,14 +47,28 @@ struct BiaseCard: View {
                 .padding(.bottom, 40)
             
             Divider()
-                .padding(.bottom)
+                .background(Color.white)
             
             HStack {
                 if biase.url != nil {
                     Link(destination: URL(string: biase.url ?? wikipedia)!){
                         Label("Подробнее", systemImage: "book")
                     }
+                } else {
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
+                
+                Spacer()
+                
+                Button(action: {
+                    viewModel.currentType = nil
+                }, label: {
+                    Image(systemName: "dice")
+                        .font(.largeTitle)
+                        .offset(y: -30)
+                })
                 
                 Spacer()
                 
@@ -63,22 +81,15 @@ struct BiaseCard: View {
                     }
                 })
             }
-            .foregroundColor(.primary)
             .padding(.horizontal)
-            .padding(.bottom, 30)
+            .padding(.top, 40)
             
         }
-        .foregroundColor(.secondary)
+        .foregroundColor(.white)
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width)
-        .overlay(
-            Rectangle()
-                .stroke(Color.secondary, lineWidth: 0.5)
-                .clipShape(CustomCorner(radius: 20, corners: [.bottomLeft, .bottomRight]))
-                .shadow(radius: 10)
-        )
     }
-   
+    
     private let wikipedia = "https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BA%D0%BE%D0%B3%D0%BD%D0%B8%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D1%85_%D0%B8%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9"
 }
 

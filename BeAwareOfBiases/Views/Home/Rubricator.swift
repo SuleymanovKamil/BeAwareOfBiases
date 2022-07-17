@@ -16,10 +16,13 @@ struct Rubricator: View {
                     Text(BiasType.biasTypes[index].title)
                         .font(.callout)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width / 4, height: 50)
+                        .frame(width: viewModel.currentType == BiasType.biasTypes[index] ? UIScreen.main.bounds.width / 3.8 : UIScreen.main.bounds.width / 3.9, height: 40)
                         .background(BiasType.biasTypes[index].color.clipShape(CustomCorner(radius: 10, corners: [.topRight, .bottomRight])))
+                        .offset(x: viewModel.currentType == BiasType.biasTypes[index] ? 0 : -10)
                         .onTapGesture {
-                            viewModel.currentType = BiasType.biasTypes[index]
+                            withAnimation {
+                                viewModel.currentType = BiasType.biasTypes[index]
+                            }
                         }
                 }
             }
@@ -31,10 +34,13 @@ struct Rubricator: View {
                     Text(BiasType.biasTypes[index].title)
                         .font(index == 3 ? .caption : .callout)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width / 4, height: 50)
+                        .frame(width: viewModel.currentType == BiasType.biasTypes[index] ? UIScreen.main.bounds.width / 3.8 : UIScreen.main.bounds.width / 3.9, height: 40)
                         .background(BiasType.biasTypes[index].color.clipShape(CustomCorner(radius: 10, corners: [.topLeft, .bottomLeft])))
+                        .offset(x: viewModel.currentType == BiasType.biasTypes[index] ? 0 : 10)
                         .onTapGesture {
-                            viewModel.currentType = BiasType.biasTypes[index]
+                            withAnimation {
+                                viewModel.currentType = BiasType.biasTypes[index]
+                            }
                         }
                 }
             }

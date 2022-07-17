@@ -15,11 +15,11 @@ struct Home: View {
             ZStack {
                 Rubricator()
                     .zIndex(1)
-                    .offset(y: -40)
+                    .offset(y: -50)
                 
                 Cards
             }
-            .background(Color.blue.ignoresSafeArea())
+            .background(Color.black.opacity(0.7).ignoresSafeArea())
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)
             .environmentObject(viewModel)
@@ -38,7 +38,7 @@ extension Home {
         Group {
             if !viewModel.biases.isEmpty {
                 TabView {
-                    ForEach(viewModel.biases) { biase in
+                    ForEach(viewModel.biases.shuffled()) { biase in
                         BiaseCard(biase: biase)
                     }
                     .padding(.bottom, 20)
