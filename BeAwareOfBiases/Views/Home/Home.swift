@@ -9,14 +9,17 @@ import SwiftUI
 
 struct Home: View {
     @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
                 Rubricator()
+                    .zIndex(1)
+                    .offset(y: -40)
                 
                 Cards
             }
-            .background(Color(hue: 1.0, saturation: 0.203, brightness: 0.683).ignoresSafeArea())
+            .background(Color.blue.ignoresSafeArea())
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)
             .environmentObject(viewModel)

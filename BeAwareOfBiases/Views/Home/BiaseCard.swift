@@ -33,6 +33,8 @@ struct BiaseCard: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
+                .foregroundColor(.white)
+            
             Spacer()
             
             Text(biase.description)
@@ -69,7 +71,6 @@ struct BiaseCard: View {
         .foregroundColor(.secondary)
         .padding(.horizontal)
         .frame(width: UIScreen.main.bounds.width)
-        .background(Color(hue: 1.0, saturation: 0.047, brightness: 0.878).clipShape(CustomCorner(radius: 20, corners: [.bottomLeft, .bottomRight])))
         .overlay(
             Rectangle()
                 .stroke(Color.secondary, lineWidth: 0.5)
