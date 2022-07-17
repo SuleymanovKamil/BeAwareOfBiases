@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B1F671A27C2986100C1D463 /* BeAwareOfBiases.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeAwareOfBiases.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1F671A27C2986100C1D463 /* Когнитивные искажения.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Когнитивные искажения.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1F671D27C2986100C1D463 /* BeAwareOfBiasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeAwareOfBiasesApp.swift; sourceTree = "<group>"; };
 		6B1F672127C2986300C1D463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B1F672427C2986300C1D463 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		6B1F671B27C2986100C1D463 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B1F671A27C2986100C1D463 /* BeAwareOfBiases.app */,
+				6B1F671A27C2986100C1D463 /* Когнитивные искажения.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,7 +188,7 @@
 			);
 			name = BeAwareOfBiases;
 			productName = BeAwareOfBiases;
-			productReference = 6B1F671A27C2986100C1D463 /* BeAwareOfBiases.app */;
+			productReference = 6B1F671A27C2986100C1D463 /* Когнитивные искажения.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -409,7 +409,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = KamilSuleymanov.BeAwareOfBiases;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Когнитивные искажения";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -440,7 +440,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = KamilSuleymanov.BeAwareOfBiases;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Когнитивные искажения";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
